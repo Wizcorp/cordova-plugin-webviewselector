@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-webviewselector" version="0.3.0">
+    <name>WebViewSelector</name>
+    <platform name="android">
+      <js-module src="www/WebViewSelector.js" name="WebViewSelector">
+        <clobbers target="cordova.plugins.WebViewSelector"/>
+      </js-module>
+      <config-file target="res/xml/config.xml" parent="/*">
+        <feature name="WebViewSelector">
+          <param name="android-package" value="org.apache.cordova.WebViewSelector" />
+        </feature>
+      </config-file>
+      <source-file src="src/android/WebViewSelector.java" target-dir="CordovaLib/src/org/apache/cordova" />
+      <hook src="scripts/androidWebViewSelectorHook.js" type="after_prepare" />
+    </platform>
+</plugin>

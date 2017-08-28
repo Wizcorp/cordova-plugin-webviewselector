@@ -1,0 +1,32 @@
+{
+  "name": "cordova-plugin-webviewselector",
+  "version": "0.3.0",
+  "description": "plugin allowing developers that are using cordova-plugin-crosswalk-webview to switch dynamically between Crosswalk webview and system one",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Wizcorp/cordova-plugin-webviewselector.git"
+  },
+  "keywords": [
+    "wizcorp",
+    "cordova",
+    "crosswalk",
+    "webview",
+    "selector",
+    "native",
+    "android",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "Wizcorp Inc.",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Wizcorp/cordova-plugin-webviewselector/issues"
+  },
+  "homepage": "https://github.com/Wizcorp/cordova-plugin-webviewselector#readme",
+  "cordova": {
+    "id": "cordova-plugin-webviewselector",
+    "platforms": [
+      "android"
+    ]
+  }
+}
