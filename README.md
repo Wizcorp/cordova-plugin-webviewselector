@@ -4,13 +4,13 @@ This plugin is designed to allow developers that are using Crosswalk with [cordo
 
 #### Why anyone would want that?
 
-Crosswalk being not maintained anymore, the future is in the use of system's webview. But on older devices we may want to keep a well working older version of Chromium. We may also want to let your application's users to switch themselves between engines for some reasons, like if your euristic to select the best engine automatically depending on the device is not perfect.
+Crosswalk being not maintained anymore, the future is in the use of system's webview. But on older devices you may want to keep a well working older version of Chromium. You may also want to let your application's users to switch themselves between engines for some reasons, like if your heuristic to select the best engine automatically depending on their device is not perfect.
 
 #### How is it working?
 
 This plugin is only changing Cordova's [webview setting](https://github.com/crosswalk-project/cordova-plugin-crosswalk-webview/blob/master/plugin.xml#L28) dynamically before the creation of the webview.
 
-#### Compability
+#### Compatibility
 
 Currently tested with:
 - Cordova Android Engine `4.1.1`.
