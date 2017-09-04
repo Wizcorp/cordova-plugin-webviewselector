@@ -10,6 +10,9 @@
           <param name="android-package" value="org.apache.cordova.WebViewSelector" />
         </feature>
       </config-file>
+      <config-file target="AndroidManifest.xml" parent="/*">
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="18"/>
+      </config-file>
       <source-file src="src/android/WebViewSelector.java" target-dir="CordovaLib/src/org/apache/cordova" />
       <hook src="scripts/androidWebViewSelectorHook.js" type="after_prepare" />
     </platform>
