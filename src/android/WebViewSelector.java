@@ -34,7 +34,12 @@ public class WebViewSelector extends CordovaPlugin {
 	}
 
 	private static String getUserConfigFilePath(Context context) {
-		return context.getExternalFilesDir(null).getAbsolutePath() + "/" + "webview.txt";
+		try {
+			return context.getExternalFilesDir(null).getAbsolutePath() + "/" + "webview.txt";
+		} catch (java.lang.NullPointerException e) {
+			LOG.e(TAG, "Unable to retrieve external files directory path");
+			return "";
+		}
 	}
 
 	private static boolean isCrosswalkInstalled () {
@@ -120,11 +125,14 @@ public class WebViewSelector extends CordovaPlugin {
 		String customValue;
 
 		// Checking if we have a custom value set from outside the app
-		customValue = readValueFromFile(getUserConfigFilePath(context));
-		if (customValue.equals(Integer.toString(WebViewType.SYSTEM.ordinal()))) {
-			return WebViewType.SYSTEM;
-		} else if (customValue.equals(Integer.toString(WebViewType.CROSSWALK.ordinal()))) {
-			return WebViewType.CROSSWALK;
+		String filePath = getUserConfigFilePath(context);
+		if (!filePath.equals("")) {
+			customValue = readValueFromFile(filePath);
+			if (customValue.equals(Integer.toString(WebViewType.SYSTEM.ordinal()))) {
+				return WebViewType.SYSTEM;
+			} else if (customValue.equals(Integer.toString(WebViewType.CROSSWALK.ordinal()))) {
+				return WebViewType.CROSSWALK;
+			}
 		}
 
 		// Checking if we have a custom value set from inside the app
