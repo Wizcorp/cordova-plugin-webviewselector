@@ -32,6 +32,15 @@ This controls which webview engine will be used by default based on Android [API
 
 If you omit this setting, default value is `23`: Crosswalk will be used on all devices up to Android 6.0 and system webview starting with Android 7.0.
 
+## Possible permission conflict with other plugins
+
+This plugin requires the WRITE_EXTERNAL_STORAGE permission on Android 4.3 (SDK version 18) and less (further versions are allowing an application to write in its own application-specific directories without it):
+```xml
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="18"/>
+```
+
+If you are using another plugin requiring the same permission but without (or different) condition, Cordova is not able to merge them alone, you have to manually keep the one with the larger scope. More information [here](https://github.com/Wizcorp/cordova-plugin-webviewselector/issues/3).
+
 # Usage
 
 `WebViewSelector` is available on: `window.cordova.plugins.WebViewSelector`.
