@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-webviewselector",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "plugin allowing developers that are using cordova-plugin-crosswalk-webview to switch dynamically between Crosswalk webview and system one",
   "repository": {
     "type": "git",
