@@ -82,7 +82,7 @@ Change webview engine. Application needs to be restarted for change to take effe
 
 ```javascript
 var ws = window.cordova.plugins.WebViewSelector;
-ws.setEngine(ws.WebViewType.SYSTEM, function (error) {
+ws.setEngine('SYSTEM', function (error) {
 	if (error) {
 		return console.error(error);
 	}
